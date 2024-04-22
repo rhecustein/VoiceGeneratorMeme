@@ -1,2 +1,4 @@
 .env
 TERM/tmp
+output
+*EmbedKey*

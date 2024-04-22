@@ -112,7 +112,7 @@ def generate_voice(jokes, filename):
 
     sample_rate = model.generation_config.sample_rate
     scipy.io.wavfile.write(
-        f"{OUTPUT_DIR}/{filename}.wav", rate=sample_rate, data=audio_array
+        f"{OUTPUT_DIR}/{filename}", rate=sample_rate, data=audio_array
     )
 
 
@@ -137,7 +137,7 @@ def main():
                 index = 0
                 for joke in jokes:
                     index += 1
-                    filename = f"{prompt}_{index}.wave"
+                    filename = f"{prompt}_{index}.wav"
                     print(f" {index}. {filename}")
                     generate_voice(
                         f"{joke['setup']} [silent] {joke['punchline']}", filename
