@@ -61,6 +61,10 @@ pip install pyinstaller
 python -m eel app.py web --onefile --noconsole
 ```
 
+```cmd
+pyinstaller --noconfirm --onefile --windowed --name "DeepSeekBarkGUI"
+```
+
 ## Update your current project
 
 Within `index.html` add:

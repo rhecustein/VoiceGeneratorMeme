@@ -1,48 +1,58 @@
 import os, subprocess, sys, re, json, threading, shutil
 
 print(" [!] Loading dependency...")
-try:
-    from openai import OpenAI
-    from transformers import AutoProcessor, BarkModel
-    from playsound import playsound
-    from pydub import AudioSegment
-    import torch
-    import eel
-    import webview
-    import configparser
-    import scipy
-except Exception as e:
-    print(" [+] Installing dependency...")
-    dependeny = [
-        "openai",
-        "eel",
-        "pywebview",
-        "configparser",
-        "scipy",
-        "playsound==1.2.2",
-        "pydub",
-    ]
-    for i in dependeny:
-        os.system("python -m pip install " + i)
-        os.system("pip install git+https://github.com/huggingface/transformers.git")
-        sys.exit(
-            "Please manually install PyTorch -- https://pytorch.org/get-started/locally/"
-        )
+# try:
+#     from openai import OpenAI
+#     from transformers import AutoProcessor, BarkModel
+#     from playsound import playsound
+#     from pydub import AudioSegment
+#     import torch
+#     import eel
+#     import webview
+#     import configparser
+#     import scipy
+# except Exception as e:
+#     print(" [+] Installing dependency...")
+#     dependeny = [
+#         "openai",
+#         "eel",
+#         "pywebview",
+#         "configparser",
+#         "scipy",
+#         "playsound==1.2.2",
+#         "pydub",
+#     ]
+#     for i in dependeny:
+#         os.system("python -m pip install " + i)
+#         os.system("python -m pip install git+https://github.com/huggingface/transformers.git")
+#         sys.exit(
+#             "Please manually install PyTorch -- https://pytorch.org/get-started/locally/"
+#         )
 
-    try:
-        from openai import OpenAI
-        from transformers import AutoProcessor, BarkModel
-        from playsound import playsound
-        from pydub import AudioSegment
-        import torch
-        import eel
-        import webview
-        import configparser
-        import scipy
-    except:
-        print(" [!] Failed to install dependency")
-        input(" [!] Error, please check internet connection")
-        sys.exit()
+#     try:
+#         from openai import OpenAI
+#         from transformers import AutoProcessor, BarkModel
+#         from playsound import playsound
+#         from pydub import AudioSegment
+#         import torch
+#         import eel
+#         import webview
+#         import configparser
+#         import scipy
+#     except:
+#         print(" [!] Failed to install dependency")
+#         input(" [!] Error, please check internet connection")
+#         sys.exit()
+
+from openai import OpenAI
+from transformers import AutoProcessor, BarkModel
+from playsound import playsound
+from pydub import AudioSegment
+import torch
+import eel
+import webview
+import configparser
+import scipy
 
 os.environ["SUNO_OFFLOAD_CPU"] = "True"
 os.environ["SUNO_USE_SMALL_MODELS"] = "True"
