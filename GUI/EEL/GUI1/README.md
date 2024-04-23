@@ -12,7 +12,7 @@ Copy this repo and you are ready to start.
 ```cmd
 pip install eel
 cd web-src
-npm i
+yarn
 ```
 
 ### Develop front-end
@@ -21,7 +21,7 @@ Run the VUE app.
 
 ```cmd
 cd web-src
-npm run dev
+yarn dev
 ```
 
 With in `web-src\public\eel.js` there is a mock-up eel implementation. This file will be overwritten when building.
@@ -35,7 +35,7 @@ Running the build command will create a folder `/web`. This folder holds build V
 
 ```cmd
 cd web-src
-npm run build
+yarn build
 ```
 
 ### Develop eel.js
@@ -55,7 +55,7 @@ This will build the front-end and then the app as one `.exe` file.
 
 ```cmd
 cd web-src
-npm run build
+yarn build
 cd ..
 pip install pyinstaller
 python -m eel app.py web --onefile --noconsole
