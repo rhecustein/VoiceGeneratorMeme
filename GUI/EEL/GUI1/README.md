@@ -62,7 +62,7 @@ python -m eel app.py web --onefile --noconsole
 ```
 
 ```cmd
-pyinstaller --noconfirm --onefile --windowed --name "DeepSeekBarkGUI"
+pyinstaller --noconfirm --onefile --windowed --name "DeepSeekBarkGUI" "app.py"
 ```
 
 ## Update your current project
