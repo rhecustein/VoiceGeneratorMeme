@@ -84,7 +84,8 @@ def check_config():
     config = configparser.ConfigParser()
     try:
         config.read("./config.ini")
-        deepseek_key = config.get("DEFAULT", "DEEPSEEK_KEY").replace('"', "")
+        deepseek_key = config.get("DEFAULT", "DEEPSEEK_KEY")
+        deepseek_key = deepseek_key.replace('"', "")
         return True
     except:
         return False
@@ -109,6 +110,8 @@ else:
         resizable=False,
         fullscreen=False,
     )
+    webview.start(window_app)
+    sys.exit()
 
 DEEPSEEK_CLIENT = OpenAI(api_key=deepseek_key, base_url="https://api.deepseek.com/v1")
 DEEPSEEK_OUTPUT_LANGUAGE = "en"
@@ -202,8 +205,7 @@ def create_5_jokes(topic):
             extracted_arr.append({"setup": setup, "punchline": punchline})
         response_json = json.loads(json.dumps(extracted_arr))
         return response_json
-    except Exception as e:
-        print(e)
+    except:
         print(" [ERROR 1]")
         return None
 

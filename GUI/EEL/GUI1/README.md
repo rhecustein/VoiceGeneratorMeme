@@ -61,8 +61,11 @@ pip install pyinstaller
 python -m eel app.py web --onefile --noconsole
 ```
 
+Manual build with `pyinstaller`.
+
 ```cmd
-pyinstaller --noconfirm --onefile --windowed --name "DeepSeekBarkGUI" "app.py"
+ pyinstaller --noconfirm --hide-console hide-early --clean --add-data "web/:web/" --name "DeepSeekBarkGUI" "app.py"
+ pyinstaller --noconfirm --noconsole --onefile --clean --add-data "web/:web/" --name "DeepSeekBarkGUI" "app.py"
 ```
 
 ## Update your current project

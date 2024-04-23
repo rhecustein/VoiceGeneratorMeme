@@ -184,7 +184,7 @@ watch(
             </div>
             <div
               v-else-if="chatPromptResult && chatPromptResult.length"
-              class="flex h-[360px] max-h-[360px] min-h-[360px] w-full flex-col gap-2.5 overflow-y-scroll rounded-xl pb-8 pr-5"
+              class="flex h-[380px] max-h-[380px] min-h-[380px] w-full flex-col gap-2.5 overflow-y-scroll rounded-xl pb-8 pr-5"
             >
               <div
                 v-for="(joke, index) in chatPromptResult"
